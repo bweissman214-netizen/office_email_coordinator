@@ -16,35 +16,26 @@ This helps the office quickly qualify opportunities by understanding budget para
 
 ## How It Works
 
-**5-Step Automated Workflow:**
+**Simple 1-Step Workflow:**
 
 1. **Receive Inquiry** at target email (e.g., blake@backpackvc.com)
    - Email asks about Charlie speaking availability
 
-2. **Request Budget** - Draft created asking for budget info
+2. **Send Qualification Form** - Draft created with Google Form link
    - From: bweissman214@gmail.com
-   - Message: "What is your budget for this engagement?"
-   - User reviews and sends draft
+   - Message: "Thanks for reaching out! Please fill out this form to help us qualify your request."
+   - Form collects: Date, Location, Budget, Event Type, Audience Size, Special Requirements
+   - User reviews and sends draft with form link
 
-3. **Send Accommodations** - When budget response arrives, automatically create draft with:
-   - Google Doc link: Charlie's accommodation requirements
-   - Message: Thanks for budget, here are our requirements
-   - User reviews and sends
+3. **Form Submitted** - Organizer fills out form with all required info
 
-4. **Search & Recommend Flights** - When location & date confirmed, automatically create draft with:
-   - Two flight options (different airlines/times)
-   - JFK departure with 9am-12pm window preference
-   - Same-day return flights
-   - Pricing and flight details
-   - User reviews and selects preferred option
+4. **Next Steps** - Upon form submission, system can:
+   - Send accommodations requirements
+   - Search for flights
+   - Send recap to Charlie
+   - (To be determined based on form data)
 
-5. **Send Recap to Charlie** - When flight is confirmed, automatically create comprehensive draft to charlie@charlieharary.com with:
-   - Complete event details (location, date, organizer, budget)
-   - Selected flight information (airline, times, duration, price)
-   - Accommodations link
-   - Request for Charlie's confirmation
-
-The workflow qualifies leads, shares requirements, books travel, and notifies Charlie automatically.
+The workflow qualifies leads efficiently with one form instead of back-and-forth emails.
 
 ## Quick Start
 
