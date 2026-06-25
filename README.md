@@ -16,7 +16,7 @@ This helps the office quickly qualify opportunities by understanding budget para
 
 ## How It Works
 
-**4-Step Automated Workflow:**
+**5-Step Automated Workflow:**
 
 1. **Receive Inquiry** at target email (e.g., blake@backpackvc.com)
    - Email asks about Charlie speaking availability
@@ -38,7 +38,13 @@ This helps the office quickly qualify opportunities by understanding budget para
    - Pricing and flight details
    - User reviews and selects preferred option
 
-The workflow qualifies leads, shares requirements, and books travel automatically.
+5. **Send Recap to Charlie** - When flight is confirmed, automatically create comprehensive draft to charlie@charlieharary.com with:
+   - Complete event details (location, date, organizer, budget)
+   - Selected flight information (airline, times, duration, price)
+   - Accommodations link
+   - Request for Charlie's confirmation
+
+The workflow qualifies leads, shares requirements, books travel, and notifies Charlie automatically.
 
 ## Quick Start
 
@@ -96,7 +102,7 @@ Charlie Harary's Office
 
 ## Test Results
 
-✅ **Complete 4-Step Workflow Tested & Verified (June 25, 2026)**
+✅ **Complete 5-Step Workflow Tested & Verified (June 25, 2026)**
 
 **Step 1: Speaking Inquiry**
 - **From:** blake@backpackvc.com
@@ -145,7 +151,25 @@ Charlie Harary's Office
 - **Time:** 5:29 PM
 - **Status:** ✅ Automatically created and ready to send
 
-**Verification:** Full end-to-end workflow confirmed. All 4 steps working perfectly: inquiry → budget question → accommodations → flight recommendations.
+**Step 7: Flight Selection Confirmation**
+- **From:** blake@backpackvc.com
+- **Message:** "Let's do this please: Option 2 - American Airlines"
+- **Selected Flight:** 10:15 AM departure, $1,185 roundtrip
+- **Time:** 7:30 PM
+
+**Step 8: Recap to Charlie**
+- **Draft ID:** `r-1752573055207998733`
+- **To:** charlie@charlieharary.com
+- **Subject:** Speaking Engagement Recap - Los Angeles, July 18th, 2026
+- **Content:** Complete recap with:
+  - Event details (location, date, organizer, budget)
+  - Selected flight (American Airlines, 10:15 AM → 2:05 PM, $1,185)
+  - Return flight (7:30 PM → 4:15 AM+1)
+  - Accommodations link
+  - Request for confirmation
+- **Status:** ✅ Draft created and ready to send to Charlie
+
+**Verification:** Full end-to-end workflow confirmed. All 5 steps working perfectly: inquiry → budget question → accommodations → flight recommendations → recap to Charlie.
 
 ## Deployment to Production
 
