@@ -76,8 +76,9 @@ Charlie Harary's Office
 - Subject: "Charlie Speaking Engagement"
 - Agent detected speaking keyword ✓
 - Draft created successfully ✓
-- Draft ID: `r8164684204957780080`
+- Draft ID: `r-8934955211285023310`
 - No duplicates created ✓
+- **Status:** Tested with real Gmail MCP API. Works end-to-end.
 
 ## Deployment to Production
 
