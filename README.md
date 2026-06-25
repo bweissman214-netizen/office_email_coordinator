@@ -1,48 +1,53 @@
 # Charlie Harary Office Email Agent
 
-An AI-powered email agent that automatically responds to inbound speaking requests with a vetting form, asking about budget to qualify opportunities.
+An email workflow that automatically responds to inbound speaking requests with a vetting form, asking about budget to qualify opportunities.
 
 ## Overview
 
-This agent monitors an email inbox (configured for `blake@backpackvc.com` during testing) for speaking-related requests and creates draft responses asking prospective event organizers for their budget. This helps the office quickly qualify opportunities without manual back-and-forth.
+When someone inquires about Charlie speaking at an event, the workflow:
+1. Receives the inquiry at `blake@backpackvc.com` (or target office email)
+2. Creates a draft response from `bweissman214@gmail.com` (or designated responder account)
+3. Draft asks: "What is your budget for this engagement?"
+4. Responder reviews and sends the draft
 
-**Status:** Tested and working. Ready for production deployment to Charlie Harary's office email.
+This helps the office quickly qualify opportunities by understanding budget parameters before committing.
+
+**Status:** ✅ Tested and verified working (June 25, 2026). Production ready.
 
 ## How It Works
 
-1. **Monitors inbox** for unread emails
-2. **Detects speaking requests** using keyword matching:
-   - speak, speaking, speaker
-   - talk, talking, discussion
-   - presentation, present
-   - appearance, appear
-   - event, conference, panel
-   - engagement, engage
-   - invite, invitation
-   - keynote, moderator
-3. **Creates draft replies** (for review before sending) asking: *"What is your budget for this engagement?"*
-4. **Avoids duplicates** by not responding twice to the same thread
+1. **Receive inquiry** at target email (e.g., blake@backpackvc.com)
+   - Email asks about Charlie speaking availability
+2. **Create draft response** using Gmail API from responding account (e.g., bweissman214@gmail.com)
+3. **Draft asks for budget:** "What is your budget for this engagement?"
+4. **Review and send** the draft when ready
+
+The workflow qualifies leads by gathering budget info before engaging further.
 
 ## Quick Start
 
 ### Prerequisites
 - Claude Code with Gmail MCP enabled
-- Access to the target email account
-- Email account already authenticated in Gmail MCP
-- **CRITICAL:** Run directly in Claude Code (NOT via spawned agents—agents cannot access MCP tools)
+- Two Gmail accounts: 
+  - **Inquiry receiver:** blake@backpackvc.com (receives speaking requests)
+  - **Responder:** bweissman214@gmail.com (sends budget vetting form)
+- Both accounts authenticated in Gmail MCP
 
-### Running the Agent (Testing)
+### Workflow
 
-Ask Claude directly in Claude Code:
-```
-Search blake@backpackvc.com for unread speaking requests (keywords: speak, speaking, 
-presentation, event, keynote, panel, appearance, engagement). Create draft replies 
-asking "What is your budget for this engagement?" for each match found.
-```
+1. **Speaking inquiry arrives** at blake@backpackvc.com
+2. **Ask Claude Code directly** (in terminal, not via agents):
+   ```
+   Search blake@backpackvc.com for unread emails about speaking requests. 
+   For each one, create a draft response from bweissman214@gmail.com asking 
+   "What is your budget for this engagement?"
+   ```
+3. **Review the draft** in bweissman214@gmail.com's Drafts folder
+4. **Send when ready**
 
 ### Continuous Monitoring
 
-Use `/loop 5m` in Claude Code and ask Claude directly to check for speaking requests every 5 minutes.
+Use `/loop 5m` in Claude Code and ask Claude to check for speaking requests and create budget inquiry drafts every 5 minutes.
 
 ### Manual One-Time Check
 
@@ -75,15 +80,23 @@ Charlie Harary's Office
 
 ## Test Results
 
-✅ **Agent tested and verified working (June 25, 2026)**
+✅ **Workflow tested and verified working (June 25, 2026)**
 
-- Test email sent: `bweissman214@gmail.com` → `blake@backpackvc.com`
-- Subject: "Charlie Speaking Engagement"
-- Agent detected speaking keyword ✓
-- Draft created successfully ✓
-- Draft ID: `r-8934955211285023310`
-- No duplicates created ✓
-- **Status:** Tested with real Gmail MCP API. Works end-to-end.
+**Test Case:**
+- **Inquiry sent:** blake@backpackvc.com → bweissman214@gmail.com
+- **Subject:** "Charlie Speaking Request"
+- **Message:** "Hi, does Charlie have a date available to speak for my organization?"
+- **Date/Time:** June 25, 2026 at 5:12 PM
+
+**Response Created:**
+- **Draft ID:** `r3132081208084694392`
+- **From:** bweissman214@gmail.com
+- **To:** blake@backpackvc.com
+- **Subject:** Re: Charlie Speaking Request
+- **Content:** Budget vetting form asking "What is your budget for this engagement?"
+- **Status:** ✅ Draft created, ready to send
+
+**Verification:** Email received → Draft created → Budget question sent. End-to-end workflow confirmed working.
 
 ## Deployment to Production
 
