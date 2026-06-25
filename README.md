@@ -16,13 +16,22 @@ This helps the office quickly qualify opportunities by understanding budget para
 
 ## How It Works
 
-1. **Receive inquiry** at target email (e.g., blake@backpackvc.com)
-   - Email asks about Charlie speaking availability
-2. **Create draft response** using Gmail API from responding account (e.g., bweissman214@gmail.com)
-3. **Draft asks for budget:** "What is your budget for this engagement?"
-4. **Review and send** the draft when ready
+**3-Step Automated Workflow:**
 
-The workflow qualifies leads by gathering budget info before engaging further.
+1. **Receive Inquiry** at target email (e.g., blake@backpackvc.com)
+   - Email asks about Charlie speaking availability
+
+2. **Request Budget** - Draft created asking for budget info
+   - From: bweissman214@gmail.com
+   - Message: "What is your budget for this engagement?"
+   - User reviews and sends draft
+
+3. **Send Accommodations** - When budget response arrives, automatically create draft with:
+   - Google Doc link: Charlie's accommodation requirements
+   - Message: Thanks for budget, here are our requirements
+   - User reviews and sends
+
+The workflow qualifies leads by gathering budget info and then sharing requirements before moving to next stage.
 
 ## Quick Start
 
@@ -80,23 +89,39 @@ Charlie Harary's Office
 
 ## Test Results
 
-✅ **Workflow tested and verified working (June 25, 2026)**
+✅ **Complete 3-Step Workflow Tested & Verified (June 25, 2026)**
 
-**Test Case:**
-- **Inquiry sent:** blake@backpackvc.com → bweissman214@gmail.com
-- **Subject:** "Charlie Speaking Request"
+**Step 1: Speaking Inquiry**
+- **From:** blake@backpackvc.com
+- **To:** bweissman214@gmail.com
+- **Subject:** Charlie Speaking Request
 - **Message:** "Hi, does Charlie have a date available to speak for my organization?"
-- **Date/Time:** June 25, 2026 at 5:12 PM
+- **Time:** 5:12 PM
 
-**Response Created:**
+**Step 2: Budget Question Draft**
 - **Draft ID:** `r3132081208084694392`
 - **From:** bweissman214@gmail.com
 - **To:** blake@backpackvc.com
-- **Subject:** Re: Charlie Speaking Request
-- **Content:** Budget vetting form asking "What is your budget for this engagement?"
-- **Status:** ✅ Draft created, ready to send
+- **Content:** "What is your budget for this engagement?"
+- **Time:** 5:21 PM
+- **Status:** ✅ Created and sent
 
-**Verification:** Email received → Draft created → Budget question sent. End-to-end workflow confirmed working.
+**Step 3: Budget Response Received**
+- **From:** blake@backpackvc.com
+- **Budget:** $5,000
+- **Time:** 5:22 PM
+
+**Step 4: Accommodations Draft**
+- **Draft ID:** `r2618205414616253067`
+- **From:** bweissman214@gmail.com
+- **To:** blake@backpackvc.com
+- **Subject:** Re: Charlie Speaking Request - Accommodations
+- **Content:** Google Doc link with Charlie's requirements
+- **Link:** https://docs.google.com/document/d/1gTlbYQocuLAKsPSaxVNW_ufBi8kPHW3CvPokfSKX1G4/edit?usp=sharing
+- **Time:** 5:23 PM
+- **Status:** ✅ Automatically created and ready to send
+
+**Verification:** Full end-to-end workflow confirmed. Budget detection and accommodations draft creation working perfectly.
 
 ## Deployment to Production
 
