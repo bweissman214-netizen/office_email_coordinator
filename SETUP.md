@@ -20,16 +20,29 @@ You should see a list of unread emails. If you get permission errors, enable Gma
 
 First run to establish baseline:
 
-In Claude Code, paste this request:
+**⚠️ IMPORTANT:** Ask Claude directly in Claude Code (NOT via spawned agents):
+
 ```
-Monitor blake@backpackvc.com for speaking-related email requests. 
-Search for unread emails with keywords: speak, speaking, presentation, 
-event, panel, appearance, engagement, invitation, keynote, moderator.
-For each match, create a DRAFT reply asking "What is your budget for this engagement?"
-Report how many emails were found and how many drafts were created.
-```
+Search blake@backpackvc.com inbox for unread emails with keywords: speak, speaking, 
+presentation, event, panel, appearance, engagement, invitation, keynote, moderator.
+
+For each match found:
+1. Verify it's actually a speaking REQUEST (not just mentioning the word)
+2. Use Gmail create_draft tool to create a reply with:
+   - To: [original sender email]
+   - Subject: Re: [original subject]
+   - Body: "Thank you for your inquiry about Charlie speaking at your event. To help 
+     us determine if this is a good fit for his calendar, could you please share:\n\n
+     What is your budget for this engagement?\n\nOnce we receive this information, 
+     we'll be able to evaluate whether we can move forward.\n\nBest regards,\n
+     Charlie Harary's Office"
+
+3. Report the draft ID for each one created
 
 This will scan the current inbox and create drafts for any existing speaking requests.
+```
+
+**Why direct, not via agent:** Agents cannot access MCP tools like Gmail's create_draft. You must call Gmail tools directly from Claude Code.
 
 ## Step 3: Set Up Continuous Monitoring (Optional)
 

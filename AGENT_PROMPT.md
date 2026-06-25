@@ -72,20 +72,35 @@ Start now: search the inbox and process speaking-related emails.
 
 ## How to Run
 
+⚠️ **IMPORTANT:** Agents cannot access MCP tools. You must run this directly in Claude Code (not via spawned agents).
+
 ### One-Time Execution
-Paste the prompt into Claude Code and the agent will run once, checking all unread emails.
+In Claude Code, ask Claude directly:
+```
+Search blake@backpackvc.com inbox for unread emails mentioning: speak, speaking, 
+speaker, presentation, keynote, event, conference, panel, appearance, engagement, 
+invitation, moderator.
+
+For each email found:
+1. Read the full content
+2. If it mentions speaking, use Gmail create_draft to send a reply asking: 
+   "What is your budget for this engagement?"
+3. Do NOT send - create DRAFT only
+4. Report draft IDs created
+```
 
 ### Continuous Monitoring Loop
 ```bash
 /loop 5m
 ```
 
-Then provide the prompt above (can be abbreviated):
+Then in Claude Code ask directly (not via agent):
 ```
-Monitor blake@backpackvc.com for speaking requests. Create DRAFT replies 
-asking for budget. Keywords: speak, speaking, presentation, event, panel, 
-appearance, engagement, invitation, keynote, moderator.
+Check blake@backpackvc.com for unread speaking requests. For each one found, 
+use Gmail create_draft to send a budget inquiry draft. Report all draft IDs created.
 ```
+
+**Key:** Use the Gmail tools directly from the main Claude Code session, not through spawned agents.
 
 ## Implementation Details
 

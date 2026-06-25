@@ -29,15 +29,20 @@ This agent monitors an email inbox (configured for `blake@backpackvc.com` during
 - Claude Code with Gmail MCP enabled
 - Access to the target email account
 - Email account already authenticated in Gmail MCP
+- **CRITICAL:** Run directly in Claude Code (NOT via spawned agents—agents cannot access MCP tools)
 
 ### Running the Agent (Testing)
 
-In Claude Code, use:
-```bash
-/loop 5m [run speaking request detection on target inbox]
+Ask Claude directly in Claude Code:
+```
+Search blake@backpackvc.com for unread speaking requests (keywords: speak, speaking, 
+presentation, event, keynote, panel, appearance, engagement). Create draft replies 
+asking "What is your budget for this engagement?" for each match found.
 ```
 
-This will check for new speaking requests every 5 minutes and create draft responses.
+### Continuous Monitoring
+
+Use `/loop 5m` in Claude Code and ask Claude directly to check for speaking requests every 5 minutes.
 
 ### Manual One-Time Check
 
