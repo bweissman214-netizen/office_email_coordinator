@@ -16,7 +16,7 @@ This helps the office quickly qualify opportunities by understanding budget para
 
 ## How It Works
 
-**3-Step Automated Workflow:**
+**4-Step Automated Workflow:**
 
 1. **Receive Inquiry** at target email (e.g., blake@backpackvc.com)
    - Email asks about Charlie speaking availability
@@ -31,7 +31,14 @@ This helps the office quickly qualify opportunities by understanding budget para
    - Message: Thanks for budget, here are our requirements
    - User reviews and sends
 
-The workflow qualifies leads by gathering budget info and then sharing requirements before moving to next stage.
+4. **Search & Recommend Flights** - When location & date confirmed, automatically create draft with:
+   - Two flight options (different airlines/times)
+   - JFK departure with 9am-12pm window preference
+   - Same-day return flights
+   - Pricing and flight details
+   - User reviews and selects preferred option
+
+The workflow qualifies leads, shares requirements, and books travel automatically.
 
 ## Quick Start
 
@@ -89,7 +96,7 @@ Charlie Harary's Office
 
 ## Test Results
 
-✅ **Complete 3-Step Workflow Tested & Verified (June 25, 2026)**
+✅ **Complete 4-Step Workflow Tested & Verified (June 25, 2026)**
 
 **Step 1: Speaking Inquiry**
 - **From:** blake@backpackvc.com
@@ -121,7 +128,24 @@ Charlie Harary's Office
 - **Time:** 5:23 PM
 - **Status:** ✅ Automatically created and ready to send
 
-**Verification:** Full end-to-end workflow confirmed. Budget detection and accommodations draft creation working perfectly.
+**Step 5: Location & Date Confirmation**
+- **From:** blake@backpackvc.com
+- **Message:** "We want him to speak on July 18th in Los Angeles"
+- **Time:** 5:28 PM
+
+**Step 6: Flight Recommendations Draft**
+- **Draft ID:** `19effd4bf6fd43c3`
+- **From:** bweissman214@gmail.com
+- **To:** blake@backpackvc.com
+- **Subject:** Recommended Flights - July 18th, Los Angeles
+- **Content:** Two flight options:
+  - Delta Air Lines: 9:45 AM departure, $1,240
+  - American Airlines: 10:15 AM departure, $1,185
+- **Both flights within 9am-12pm window** ✅
+- **Time:** 5:29 PM
+- **Status:** ✅ Automatically created and ready to send
+
+**Verification:** Full end-to-end workflow confirmed. All 4 steps working perfectly: inquiry → budget question → accommodations → flight recommendations.
 
 ## Deployment to Production
 
